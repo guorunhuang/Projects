@@ -1,0 +1,6 @@
+Target: pic.0948.jpg
+Metric: ssd
+Top-3 matches:
+1	pic.0948.jpg	0
+2	pic.0930.jpg	183.172
+3	pic.0928.jpg	281.205
