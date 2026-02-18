@@ -1,0 +1,22 @@
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+  max-width: 360px;
+}
+
+.sudoku-grid input {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* First child pseudo-class */
+.sudoku-grid input:first-child {
+  background-color: #eaeaea;
+}
+
+.timer {
+  font-weight: bold;
+}

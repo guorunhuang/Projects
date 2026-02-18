@@ -1,0 +1,13 @@
+.game-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .game-list li {
+    margin: 10px 0;
+  }
+  
+  .game-list span {
+    margin-left: 10px;
+    color: gray;
+  }
