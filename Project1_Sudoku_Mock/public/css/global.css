@@ -1,0 +1,151 @@
+/*  Global base styles  */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/*  Navigation bar  */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Website title */
+.nav-title {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;              /* Allow wrapping to prevent overflow */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Navigation links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+
+  margin: 5px;
+  padding: 6px 10px;
+
+  white-space: nowrap;          /* Prevent text breaking */
+  border-radius: 4px;
+
+  transition: background-color 0.3s;
+}
+
+/* Hover pseudo-class */
+.nav-links a:hover {
+  background-color: #444;
+}
+
+/* Active page indicator */
+.nav-links a.active {
+  background-color: #666;
+}
+
+/*  Main content layout  */
+
+.main-content {
+  padding-top: 80px;            /* Space for fixed navbar */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/*  Sudoku Layout  */
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* 9x9 grid */
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 50px);
+  grid-template-rows: repeat(9, 50px);
+  border: 3px solid #000;
+}
+
+/* All cells */
+.sudoku-grid input {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;   /* VERY IMPORTANT */
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+}
+
+/* Prefilled cells */
+.sudoku-grid input:disabled {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+/* ===== Vertical thick lines (after col 3 and 6) ===== */
+.sudoku-grid input:nth-child(9n + 4),
+.sudoku-grid input:nth-child(9n + 7) {
+  border-left: 3px solid #000;
+}
+
+/* ===== Horizontal thick lines (after row 3 and 6) ===== */
+.sudoku-grid input:nth-child(n + 28):nth-child(-n + 36),
+.sudoku-grid input:nth-child(n + 55):nth-child(-n + 63) {
+  border-top: 3px solid #000;
+}
+
+/*  Responsive design for mobile  */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    top: auto;
+    bottom: 0;                  /* Move navbar to bottom on mobile */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    justify-content: center;    /* Center links on small screens */
+  }
+
+  .main-content {
+    padding-top: 20px;
+    padding-bottom: 100px;      /* Space for bottom navbar */
+  }
+
+  .home-logo {
+    width: 150px;
+    margin: 20px 0;
+  }
+
+  .nav-links a:first-child {
+    margin-left: 0;
+  }
+
+  .nav-links a {
+    transition: color 0.3s ease;
+  }
+}
