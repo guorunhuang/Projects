@@ -1,0 +1,94 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: rgba(15,23,42,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--text);
+}
+.navbar-brand .brand-accent { color: var(--accent); }
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-link:hover  { color: var(--text); background: var(--surface); }
+.nav-link.active { color: var(--accent); background: rgba(59,130,246,0.1); }
+
+.nav-btn {
+  color: #fff;
+  background: var(--accent);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.42rem 1rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+  transition: background 0.15s, transform 0.1s;
+}
+.nav-btn:hover { background: var(--accent-bright); transform: translateY(-1px); }
+
+/* Burger */
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.burger-bar {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.burger-bar.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger-bar.open:nth-child(2) { opacity: 0; }
+.burger-bar.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 680px) {
+  .navbar-burger { display: flex; }
+  .navbar-links {
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(15,23,42,0.99);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.25rem;
+    display: none;
+  }
+  .navbar-links.open { display: flex; }
+  .nav-link { padding: 0.65rem 1rem; }
+  .nav-btn   { margin-left: 0; margin-top: 0.25rem; padding: 0.65rem 1rem; text-align: center; }
+}

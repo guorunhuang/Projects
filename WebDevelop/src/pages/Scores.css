@@ -1,0 +1,73 @@
+.scores-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.scores-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.scores-legend-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 90px 80px;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 90px 80px;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.12s;
+}
+.score-row:last-child  { border-bottom: none; }
+.score-row:hover       { background: var(--bg); }
+.score-row.top-three   { background: rgba(59,130,246,0.04); }
+
+.rank-cell { display: flex; align-items: center; gap: 0.65rem; }
+.medal     { font-size: 1.1rem; }
+.rank-num  {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  min-width: 26px;
+}
+.username {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.stat-cell {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+.stat-cell.mono   { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+.stat-cell.streak { color: var(--amber); font-weight: 600; }
+
+.scores-note {
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .scores-legend-row,
+  .score-row { grid-template-columns: 1fr 60px 72px 60px; padding: 0.75rem 0.85rem; }
+}
