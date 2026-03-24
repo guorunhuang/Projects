@@ -1,0 +1,91 @@
+.sudoku-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--cell-bg);
+  border: 1px solid var(--cell-border);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  outline: none;
+  position: relative;
+  user-select: none;
+  min-width: 0;
+}
+
+.sudoku-cell:hover:not(.fixed):not(.locked) {
+  background: var(--cell-hover);
+  border-color: var(--accent-bright);
+  cursor: pointer;
+}
+
+.cell-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1rem, 3.5cqi, 1.6rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ── Fixed / given cells ── */
+.fixed {
+  background: var(--cell-fixed);
+  cursor: default;
+}
+.fixed:hover { background: var(--cell-fixed); border-color: var(--cell-border); cursor: default; }
+.fixed .cell-value { color: var(--text-muted); font-weight: 400; }
+
+/* ── Selected ── */
+.selected {
+  background: var(--cell-selected) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--accent), inset 0 0 0 1px rgba(99,179,255,0.3);
+  z-index: 3;
+}
+.selected .cell-value { color: var(--accent-bright); }
+
+/* ── Related (same row / col / box) ── */
+.related { background: var(--cell-related) !important; }
+
+/* ── Same value as selected ── */
+.same-value {
+  background: var(--cell-same-value) !important;
+  border-color: rgba(245,158,11,0.45) !important;
+}
+.same-value .cell-value { color: var(--amber); }
+
+/* ── Invalid ── */
+.invalid {
+  background: var(--cell-invalid) !important;
+  border-color: var(--error) !important;
+  animation: shake 0.25s ease;
+}
+.invalid .cell-value { color: var(--error); }
+
+/* ── Hint ── */
+.hint {
+  background: var(--cell-hint) !important;
+  border-color: var(--hint-color) !important;
+  box-shadow: 0 0 0 2px var(--hint-color);
+  animation: pulse-hint 1.4s ease infinite;
+}
+.hint .cell-value { color: var(--green); }
+
+/* ── Box-border separators ── */
+.border-box-right  { border-right:   2px solid var(--box-border) !important; border-radius: 0; }
+.border-box-bottom { border-bottom:  2px solid var(--box-border) !important; border-radius: 0; }
+
+.locked { cursor: default !important; }
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%      { transform: translateX(-3px); }
+  75%      { transform: translateX(3px); }
+}
+@keyframes pulse-hint {
+  0%,100% { box-shadow: 0 0 0 2px var(--hint-color); }
+  50%     { box-shadow: 0 0 0 5px var(--hint-color), 0 0 14px var(--hint-color); }
+}

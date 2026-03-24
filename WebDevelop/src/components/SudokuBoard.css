@@ -1,0 +1,20 @@
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  gap: 3px;
+  padding: 10px;
+  background: var(--board-bg);
+  border-radius: 12px;
+  border: 2px solid var(--box-border);
+  /* Always fill the available width — no "small-before-click" issue */
+  width: 100%;
+  max-width: 500px;
+  container-type: inline-size;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.sudoku-board.size-6 { max-width: 340px; }
+
+@media (max-width: 480px) {
+  .sudoku-board { gap: 2px; padding: 7px; }
+}
