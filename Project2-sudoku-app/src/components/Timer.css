@@ -1,0 +1,18 @@
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+}
+.timer-icon { font-size: 0.9rem; }
+.timer-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-bright);
+  letter-spacing: 0.08em;
+  min-width: 55px;
+}

@@ -1,0 +1,22 @@
+.number-pad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.pad-btn {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.08s;
+}
+.pad-btn:hover      { background: var(--surface2); border-color: var(--accent); transform: translateY(-2px); }
+.pad-btn:active     { transform: translateY(0); }
+.erase-btn          { color: var(--error); border-color: rgba(239,68,68,0.4); }
+.erase-btn:hover    { background: rgba(239,68,68,0.1); border-color: var(--error); }

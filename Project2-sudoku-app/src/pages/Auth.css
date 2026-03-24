@@ -1,0 +1,105 @@
+.auth-page {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+  overflow-y: auto;
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.auth-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.auth-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+.auth-sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 1.75rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+.field-input::placeholder { color: var(--text-dim); }
+.field-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.18);
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.15s, transform 0.1s;
+  display: block;
+}
+.auth-submit:hover  { background: var(--accent-bright); transform: translateY(-1px); }
+.auth-submit:active { transform: translateY(0); }
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.auth-link { color: var(--accent); text-decoration: none; font-weight: 600; }
+.auth-link:hover { text-decoration: underline; }
